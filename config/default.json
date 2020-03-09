@@ -1,0 +1,41 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "oauth": {
+      "redirect": "http://localhost:3030/oauth/spotify/callback",
+      "spotify": {
+        "key": "b4072203bdc74769862cb135b900c3b7",
+        "secret": "313ba8800a24449c89f2eda939d4e7d9",
+        "scopes": "user-read-private"
+      }
+    },
+    "entity": "user",
+    "service": "users",
+    "secret": "5Xu7MsGmOyHU2sIfpZnSSMhPZew=",
+    "authStrategies": [
+      "jwt",
+      "local",
+      "spotify"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "nedb": "../data"
+}
